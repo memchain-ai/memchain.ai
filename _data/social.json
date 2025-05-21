@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Github",
+    "link": "https://github.com/memchain-ai",
+    "image": "images/social/github.svg"
+  },
+  {
+    "name": "Twitter",
+    "link": "https://twitter.com/memchain.ai",
+    "image": "images/social/twitter.svg"
+  },
+  {
+    "name": "Facebook",
+    "link": "https://facebook.com",
+    "image": "images/social/facebook.svg"
+  },
+  {
+    "name": "Email",
+    "link": "mailto:support@memchain.ai",
+    "image": "images/social/email.svg"
+  },
+  {
+    "name": "Instagram",
+    "link": "https://instagram.com",
+    "image": "images/social/instagram.svg"
+  },
+  {
+    "name": "Discord",
+    "link": "https://discord.gg/weMzWppe",
+    "image": "images/social/discord.svg"
+  }
+]

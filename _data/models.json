@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Deploy On-Premise",
+    "description": "Deploy MemChain AI application on your own servers.",
+    "image": {
+      "url": "images/models/noun_branding_1885335.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Deploy in Public & Hybrid Clouds",
+    "description": "Deploy MemChain AI Application in public and hybrid clouds of your choice",
+    "image": {
+      "url": "images/models/noun_The Process_1885341.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Our SaaS Offering",
+    "description": "MemChain AI application offered as SaaS. (Memory As A Service)",
+    "image": {
+      "url": "images/models/noun_3d modeling_1885342.svg",
+      "width": 80,
+      "height": 80
+    }
+  }
+]

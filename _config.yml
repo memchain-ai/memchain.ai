@@ -1,0 +1,60 @@
+baseurl: "/"
+permalink: pretty
+title: "MemChain AI"
+
+logo:
+  mobile: "images/logo/logo-mobile.svg"
+  mobile_height: "32px"
+  mobile_width: "32px"
+  desktop: "images/logo/logo.svg"
+  desktop_height: "60px"
+  desktop_width: "200px"
+
+fonts:
+  use_google_fonts: true
+  google_fonts_url: "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
+  use_self_hosted_fonts: false
+  heading: "Fira Sans"
+  base: "Fira Sans"
+  monospace: "Fira Mono"
+  logo: "Fira Sans"
+
+home:
+  limit_features: 6
+
+collections:
+  features:
+    output: true
+    sort_by: weight
+  team:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "features"
+    values:
+      layout: "feature"
+  - scope:
+      path: ""
+      type: "team"
+    values:
+      layout: "team"
+
+sass:
+  style: compressed # possible values: nested expanded compact compressed
+
+plugins:
+  - jekyll-environment-variables
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - LICENSE
+  - README.md
