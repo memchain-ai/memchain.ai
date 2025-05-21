@@ -16,6 +16,7 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:/srv/jekyll \
             -w /srv/jekyll \
+            --user $(id -u):$(id -g) \
             jekyll/builder:latest \
             bash -c "bundle install && bundle exec jekyll build"
 
