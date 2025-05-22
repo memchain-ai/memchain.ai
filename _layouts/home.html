@@ -24,6 +24,9 @@ bodyClass: "page-home"
 <div class="strip">
   <div class="container pt-6 pb-6 pb-md-10">
     <div class="row justify-content-start">
+      <h1 style="color: #009ede;">Your AI can’t be intelligent without memory.</h1>
+      <p class="lead">Most AI applications today operate in isolation. They are stateless, forgetful, and disconnected from prior context. Enterprises building chatbots, copilots, RAG systems, or autonomous agents often face the same challenge: the absence of persistent memory.</p> 
+      <p class="lead">MemChain AI solves this. It gives your AI the ability to retain, recall, and reason across time, users, and systems. Whether you are scaling across teams or coordinating complex agent workflows, MemChain provides the foundation for truly intelligent and context-aware AI.</p>
       {% assign limit = site.home.limit_features | default: 6 %}
       {% for service in site.features limit: limit %}
       <div class="col-12 col-md-4 mb-1">
@@ -32,7 +35,7 @@ bodyClass: "page-home"
             <h2 class="service-title">
               <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
             </h2>
-            <p>{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p>
+            <p class="lead">{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p>
           </div>
         </div>
       </div>
