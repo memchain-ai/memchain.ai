@@ -3,7 +3,7 @@ main:
     url: "/"
     weight: 1
   - name: "Capabilities"
-    url: "/features/"
+    url: "/capabilities/"
     weight: 2
   - name: "Team"
     url: "/team/"

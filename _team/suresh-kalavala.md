@@ -1,7 +1,7 @@
 ---
 title: "Suresh Kalavala"
 date: 2018-11-19T10:47:58+10:00
-image: "images/team/kalavala.jpg"
+image: "images/team/kalavala-bw.jpg"
 jobtitle: "Founder & CEO"
 linkedinurl: "https://www.linkedin.com/in/kalavala/"
 promoted: true

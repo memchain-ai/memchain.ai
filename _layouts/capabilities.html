@@ -1,6 +1,6 @@
 ---
 layout: default
-bodyClass: "page-features"
+bodyClass: "page-capabilities"
 ---
 
 <div class="intro">
@@ -19,16 +19,16 @@ bodyClass: "page-features"
 </div>
 
 <div class="container pt-6 pb-6">
-  <!-- <div><h2>MemChain AI Features</h2></div> -->
+  <!-- <div><h2>MemChain AI Capabilities</h2></div> -->
   <div class="row">
-    {% for service in site.features %}
+    {% for capability in site.capabilities %}
     <div class="col-12 col-md-6 mb-3">
-      <div class="service service-summary">
-        <div class="service-content">
-          <h2 class="service-title">
-            <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
+      <div class="capability capability-summary">
+        <div class="capability-content">
+          <h2 class="capability-title">
+            <a href="{{ capability.url | relative_url }}">{{ capability.title }}</a>
           </h2>
-          <p class="lead">{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p>
+          <p class="lead">{{ capability.excerpt | markdownify | strip_html | truncate: 100 }}</p>
         </div>
       </div>
     </div>

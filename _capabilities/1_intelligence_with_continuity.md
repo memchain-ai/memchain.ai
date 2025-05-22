@@ -1,17 +1,15 @@
 ---
+layout: capability
 title: "Intelligence with Continuity"
-date: 2019-05-18T12:33:46+10:00
 weight: 1
+intro_image: "/images/intelligence_with_continuity-1.png"
+intro_image_absolute: false
+intro_image_hide_on_mobile: true
+tagline: "Memory turns reactive prompts into proactive intelligence"
+summary1: "True intelligence requires memory. Without the ability to retain and build on past information, AI systems remain shallow and reactive. 'Intelligence with Continuity' refers to the capability of an AI system to remember previous interactions, decisions, tool invocations, and outcomes across time. This continuity enables long-term reasoning, learning, adaptation, and personalization. It is what separates a stateless prompt-response system from an agent that can truly operate in dynamic environments."
+summary2: "In real-world applications, enterprises cannot afford to have AI systems that forget. Whether it is a customer support bot that handles returning users, a sales assistant that follows up over multiple conversations, or an autonomous agent managing a business workflow, the lack of continuity creates friction, inefficiency, and user frustration. Context resets become expensive in both compute and experience. Without memory, AI systems repeatedly fall into short-term thinking, asking the same questions, making the same mistakes, and losing the thread of complex processes."
 ---
-
-Empowers AI systems to retain context across interactions, enabling long-term reasoning, personalization, and learning over time.
-
-<img src="/images/intelligence_with_continuity.png" width="500">
-
-# Memory turns reactive prompts into proactive intelligence
-<p class="lead">
-True intelligence requires memory. Without the ability to retain and build on past information, AI systems remain shallow and reactive. "Intelligence with Continuity" refers to the capability of an AI system to remember previous interactions, decisions, tool invocations, and outcomes across time. This continuity enables long-term reasoning, learning, adaptation, and personalization. It is what separates a stateless prompt-response system from an agent that can truly operate in dynamic environments.
-</p>
+<span class="lead">Empowers AI systems to retain context across interactions, enabling long-term reasoning, personalization, and learning over time.</span>
 
 ## Why this matters for enterprises and AI builders:
 <p class="lead">

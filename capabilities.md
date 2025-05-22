@@ -1,7 +1,7 @@
 ---
-title: Features
-layout: features
-description: Features
+title: Capabilities
+layout: capabilities
+description: Capabilities
 intro_image: "images/illustrations/reading.png"
 intro_image_absolute: true
 intro_image_hide_on_mobile: true

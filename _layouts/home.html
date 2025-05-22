@@ -27,15 +27,15 @@ bodyClass: "page-home"
       <h1 style="color: #009ede;">Your AI can’t be intelligent without memory.</h1>
       <p class="lead">Most AI applications today operate in isolation. They are stateless, forgetful, and disconnected from prior context. Enterprises building chatbots, copilots, RAG systems, or autonomous agents often face the same challenge: the absence of persistent memory.</p> 
       <p class="lead">MemChain AI solves this. It gives your AI the ability to retain, recall, and reason across time, users, and systems. Whether you are scaling across teams or coordinating complex agent workflows, MemChain provides the foundation for truly intelligent and context-aware AI.</p>
-      {% assign limit = site.home.limit_features | default: 6 %}
-      {% for service in site.features limit: limit %}
+      {% assign limit = site.home.limit_capabilities | default: 6 %}
+      {% for capability in site.capabilities limit: limit %}
       <div class="col-12 col-md-4 mb-1">
-        <div class="service service-summary">
-          <div class="service-content">
-            <h2 class="service-title">
-              <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
+        <div class="capability capability-summary">
+          <div class="capability-content">
+            <h2 class="capability-title">
+              <a href="{{ capability.url | relative_url }}">{{ capability.title }}</a>
             </h2>
-            <p class="lead">{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p>
+            <p class="lead">{{ capability.excerpt | markdownify | strip_html | truncate: 100 }}</p>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@ bodyClass: "page-home"
     </div>
     <div class="row justify-content-center">
       <div class="col-auto">
-        <a class="button button-primary" href="{{ "features" | relative_url }}">View All Features</a>
+        <a class="button button-primary" href="{{ "capabilities" | relative_url }}">View All Capabilities</a>
       </div>
     </div>
   </div>
@@ -56,12 +56,12 @@ bodyClass: "page-home"
 
       {% for model in site.data.models %}
       <div class="col-12 col-md-6 col-lg-4 mb-2">
-        <div class="feature">
+        <div class="capability">
           {% if model.image %}
-          <div class="feature-image"><img alt="{{ model.title }} logo" src="{{ model.image.url | relative_url }}" width="{{ model.image.width }}" height="{{ model.image.height }}" /></div>
+          <div class="capability-image"><img alt="{{ model.title }} logo" src="{{ model.image.url | relative_url }}" width="{{ model.image.width }}" height="{{ model.image.height }}" /></div>
           {% endif %}
-          <h2 class="feature-title">{{ model.title }}</h2>
-          <div class="feature-content">{{ model.description }}</div>
+          <h2 class="capability-title">{{ model.title }}</h2>
+          <div class="capability-content">{{ model.description }}</div>
         </div>
       </div>
       {% endfor %}

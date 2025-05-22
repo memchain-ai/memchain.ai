@@ -1,0 +1,48 @@
+---
+layout: default
+bodyClass: "page-home"
+---
+
+<div class="intro">
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
+        {{ content }}
+        {% if page.show_call_box %}
+          {% include call.html show_button=true %}
+        {% endif %}
+      </div>
+      {% if page.intro_image %}
+      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
+        <img alt="{{ page.title }}" class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relURL }}" />
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="container pt-6 pb-6 pb-md-10">
+    <div class="row justify-content-start">
+      <h1 style="color: #009ede;">The Missing Link and How MemChain fills the gap</h1>
+      <p class="lead">
+      The industry has only started scratching the surface of this problem. Tools like Zep offer session storage, but lack scoped memory, federation, or multi-tenant support. Mem0 provides lightweight memory handling for LangChain agents, but it is not built for enterprise environments or large-scale agent systems. Neither solution delivers full lifecycle memory management, semantic graph search, access control, or the security posture required by real organizations.
+      </p>
+      <p class="lead">
+      MemChain AI fills this gap with a complete platform. Scoped memory at global, tenant, and agent levels. Semantic and graph search that allows agents to reason, not just recall. Permissioned memory sharing that respects organizational boundaries. Production-grade APIs. Deployment flexibility across SaaS, cloud, hybrid, and on-prem environments. Everything built to scale from individual agents to enterprise fleets.
+      </p>
+      <p class="lead">
+      MemChain AI is not just a feature or plugin. It is a <b>production-grade memory infrastructure</b> designed to power the next generation of autonomous agents. With scoped memory, semantic and graph search, permissioned sharing, and multi-tenant isolation, it gives agents a place to store their knowledge, reason over it, and evolve. Whether you're orchestrating a swarm of agents, building enterprise workflows, or training adaptive models, MemChain is your foundation.
+      </p>
+      <p class="lead">
+      Our mission is to give artificial intelligence the one thing it has always lacked: the ability to remember with purpose. Our vision is a world where agents collaborate across boundaries, recall meaningful experiences, and operate with memory that is secure, contextual, and actionable.
+      </p>
+      <p class="lead">
+      This is just the beginning. MemChain AI is evolving fast, and we are building with developers, enterprises, and research teams in mind. We believe memory is the missing link in intelligent systems. And we’re here to build it right.
+      </p>
+      <p class="lead">
+      Let’s give AI a memory worth having.
+      </p>
+    </div>
+  </div>
+</div>

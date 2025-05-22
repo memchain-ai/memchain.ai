@@ -1,5 +1,5 @@
----
----
+--- 
+--- 
 
 // Colors
 $primary: #009ede;
@@ -102,19 +102,20 @@ $sub-footer-text-color: $white;
 @import "components/intro";
 @import "components/intro-image";
 @import "components/strip";
-@import "components/feature";
+@import "components/capability";
 @import "components/social";
 // @import "components/fonts"; // Uncomment this line to self host font
 
 // Pages
 @import "pages/page-home";
 @import "pages/page-teams";
-@import "pages/page-service";
+@import "pages/page-capability";
 
 body {
   font-size: 16px;
   line-height: 1.2;
   font-family: $font-family-base;
+
   @include media-breakpoint-up(md) {
     font-size: 16px;
     line-height: 1.3;

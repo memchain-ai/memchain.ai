@@ -1,16 +1,15 @@
 ---
+layout: capability
 title: "Multi-Tenant Architecture"
-date: 2018-12-28T15:14:39+10:00
-weight: 11
+weight: 8
+intro_image: "/images/multi-tenant-3.png"
+intro_image_absolute: false
+intro_image_hide_on_mobile: true
+tagline: ""
+summary1: "MemChain AI is built on a secure, multi-tenant architecture that lets multiple organizations operate independently within a shared platform. Each tenant’s data, memory scopes, and user access are fully isolated and governed by token-based authentication. Memory is scoped at global, tenant, and agent levels, ensuring precise control over what each agent can access. For enterprises needing collaboration, MemChain supports federated sharing with fine-grained permissions and audit logs. This eliminates the need for separate deployments, allowing organizations to scale securely without compromising control or visibility."
 ---
 
-Isolated memory domains per tenant, with scoped access for agents—ideal for enterprises and teams.
-<img src="/images/multi-tenant-3.png" width="500">
-
-# Overview
-<p class="lead">
-MemChain AI is built on a secure, multi-tenant architecture that lets multiple organizations operate independently within a shared platform. Each tenant’s data, memory scopes, and user access are fully isolated and governed by token-based authentication. Memory is scoped at global, tenant, and agent levels, ensuring precise control over what each agent can access. For enterprises needing collaboration, MemChain supports federated sharing with fine-grained permissions and audit logs. This eliminates the need for separate deployments, allowing organizations to scale securely without compromising control or visibility.
-</p>
+<span class="lead">Isolated memory domains per tenant, with scoped access for agents—ideal for enterprises and teams.</span>
 
 # How MemChain AI Implements Multi-Tenancy
 ## Scoped Memory Isolation:
