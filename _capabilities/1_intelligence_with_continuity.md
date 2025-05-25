@@ -12,9 +12,6 @@ summary2: "In real-world applications, enterprises cannot afford to have AI syst
 <span class="lead">Empowers AI systems to retain context across interactions, enabling long-term reasoning, personalization, and learning over time.</span>
 
 ## Why this matters for enterprises and AI builders:
-<p class="lead">
-In real-world applications, enterprises cannot afford to have AI systems that forget. Whether it is a customer support bot that handles returning users, a sales assistant that follows up over multiple conversations, or an autonomous agent managing a business workflow, the lack of continuity creates friction, inefficiency, and user frustration. Context resets become expensive in both compute and experience. Without memory, AI systems repeatedly fall into short-term thinking, asking the same questions, making the same mistakes, and losing the thread of complex processes.
-</p>
 
 ## Scenario and contrast:
 <p class="lead">
