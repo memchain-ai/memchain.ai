@@ -2,7 +2,7 @@
 title: Memory Types
 layout: memorytypes
 description: Memory Types Supported
-intro_image: "images/illustrations/reading.png"
+intro_image: "images/illustrations/homepage-image-4.png"
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
 ---
