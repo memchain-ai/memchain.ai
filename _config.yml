@@ -34,12 +34,12 @@ collections:
 
 defaults:
   - scope:
-      path: ""
+      path: "/"
       type: "capabilities"
     values:
       layout: "capability"
   - scope:
-      path: ""
+      path: "/"
       type: "team"
     values:
       layout: "team"
