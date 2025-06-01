@@ -50,10 +50,10 @@ bodyClass: "page-home"
 </div>
 
 {% if site.data.models %}
-<div class="strip strip-grey">
+<div class="strip strip-grey" style="margin-top: -50px; margin-bottom: -200px;">
   <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <h1>Deployment Models</h1>
     <div class="row justify-content-center">
-
       {% for model in site.data.models %}
       <div class="col-12 col-md-6 col-lg-4 mb-2">
         <div class="capability">
@@ -65,7 +65,27 @@ bodyClass: "page-home"
         </div>
       </div>
       {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
 
+{% if site.data.compliance %}
+<div class="strip strip-grey" style="margin-top: 0px; margin-bottom: -75px;">
+  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <h1>Compliance Readiness</h1>
+    <div class="row justify-content-center">
+      {% for item in site.data.compliance %}
+      <div class="col-12 col-md-6 col-lg-4 mb-2">
+        <div class="capability">
+          {% if item.image %}
+          <div class="capability-image"><img alt="{{ item.title }} logo" src="{{ item.image.url | relative_url }}" width="{{ item.image.width }}" height="{{ item.image.height }}" /></div>
+          {% endif %}
+          <h2 class="capability-title">{{ item.title }}</h2>
+          <div class="capability-content">{{ item.description }}</div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </div>

@@ -26,6 +26,9 @@ collections:
   capabilities:
     output: true
     sort_by: weight
+  memorytypes:
+    output: true
+    sort_by: weight
   team:
     output: true
 

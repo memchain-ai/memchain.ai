@@ -1,0 +1,29 @@
+[
+  {
+    "title": "SOC 2",
+    "description": "Built with SOC 2 compliance in mind, ensuring strong controls for data security, availability, and privacy.",
+    "image": {
+      "url": "images/models/noun_branding_1885335.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "HIPAA Compliance",
+    "description": "Designed with HIPAA compliance in mind, providing safeguards for sensitive health information.",  
+    "image": {
+      "url": "images/models/noun_The Process_1885341.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "GDPR Compliance",
+    "description": "Designed to align with GDPR requirements, responsible handling & protection of personal data.",
+    "image": {
+      "url": "images/models/noun_3d modeling_1885342.svg",
+      "width": 80,
+      "height": 80
+    }
+  }
+]
