@@ -1,6 +1,5 @@
 --- 
 --- 
-
 // Colors
 $primary: #009ede;
 $primary-dark: #a01b16;
@@ -17,12 +16,12 @@ $link-hover-color: lighten($primary, 10%);
 $link-hover-decoration: underline;
 
 // Fonts
-$font-family-base: "Fira Sans", Helvetica, Arial, sans-serif, -apple-system;
-$font-family-heading: "Fira Sans", serif, -apple-system;
+$font-family-base: "Inter", Helvetica, Arial, sans-serif, -apple-system;
+$font-family-heading: "Roboto", serif, -apple-system;
 
-$base-font-family: "Fira Sans", sans-serif;
-$heading-font-family: "Fira Sans", sans-serif;
-$code-font-family: "Fira Mono", monospace;
+$base-font-family: "Inter", sans-serif;
+$heading-font-family: "Roboto", sans-serif;
+$code-font-family: "Roboto Mono", monospace;
 
 // Footer
 $footer-background-color: $primary;

@@ -40,4 +40,4 @@ CMD ["nginx", "-g", "daemon off;"]
 # Run the container
 #docker run -p 8080:80 jekyll-site
 #
-#
+# bundle exec jekyll serve

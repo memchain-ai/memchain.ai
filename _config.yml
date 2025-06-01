@@ -3,21 +3,21 @@ permalink: pretty
 title: "MemChain AI"
 
 logo:
-  mobile: "images/logo/logo-mobile.svg"
-  mobile_height: "32px"
-  mobile_width: "32px"
-  desktop: "images/logo/logo.svg"
-  desktop_height: "60px"
+  mobile: "images/logo/isotype-memchain.svg"
+  mobile_height: "48px"
+  mobile_width: "48px"
+  desktop: "images/logo/logo-memchain.svg"
+  desktop_height: "100px"
   desktop_width: "200px"
 
 fonts:
   use_google_fonts: true
-  google_fonts_url: "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
+  google_fonts_url: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
   use_self_hosted_fonts: false
-  heading: "Fira Sans"
-  base: "Fira Sans"
-  monospace: "Fira Mono"
-  logo: "Fira Sans"
+  heading: "Roboto Sans"
+  base: "Inter"
+  monospace: "Roboto Mono"
+  logo: "Roboto Sans"
 
 home:
   limit_capabilities: 6

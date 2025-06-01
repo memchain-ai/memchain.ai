@@ -8,7 +8,7 @@ intro_image_hide_on_mobile: true
 show_call_box: true
 ---
 
-# Powering the Memory Layer of Agentic AI 
+# Intelligent Memory Backbone for AI
 
 <span style="color: #009ede; font-weight: bold">MemChain AI</span> is a purpose-built memory infrastructure platform designed to supercharge the development and deployment of agentic AI systems. 
 

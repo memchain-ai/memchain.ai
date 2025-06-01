@@ -5,6 +5,7 @@
   padding-top: 60px;
   padding-bottom: 60px;
   overflow: hidden;
+  color: #004455;
 
   @include media-breakpoint-up(md) {
     padding-top: 25px;
@@ -16,6 +17,7 @@
     font-size: 42px;
     font-weight: bold;
     line-height: 1.2;
+    color: #004455;
 
     @include media-breakpoint-up(md) {
       width: 80%;
@@ -32,7 +34,8 @@
     font-size: 1.2rem;
     line-height: 1.4;
     margin-bottom: 30px;
-    color: $black;
+    color: #004455;
+    // color: $black;
     font-family: $font-family-base;
   }
 
@@ -49,6 +52,7 @@
 }
 
 .intro-small {
+  color: #004455;
   padding-top: 100px;
   padding-bottom: 30px;
 }
