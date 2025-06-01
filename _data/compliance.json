@@ -25,5 +25,23 @@
       "width": 80,
       "height": 80
     }
+  },
+  {
+  "title": "PCI DSS Compliance",
+  "description": "Implements secure handling of cardholder data and adheres to the Payment Card Industry Data Security Standard (PCI DSS) to protect financial transactions.",
+  "image": {
+    "url": "images/pci.svg",
+    "width": 80,
+    "height": 80
+    }
+  },
+  {
+    "title": "ISO 27001",
+    "description": "Follows ISO 27001 standards for information security management, ensuring a systematic approach to managing sensitive company information.",
+    "image": {
+      "url": "images/models/noun_3d modeling_1885342.svg",
+      "width": 80,
+      "height": 80
+    }
   }
 ]
