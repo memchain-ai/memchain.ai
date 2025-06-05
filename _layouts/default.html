@@ -5,7 +5,12 @@
   <meta charset="utf-8">
   <title>{% if page.title %}{{page.title}}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="{{ '/images/favicon.png' | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ '/images/favicon.ico' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+
   <!-- Google Fonts CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,16 +27,16 @@
   <meta property="og:title" content="{{ page.meta_title }}" />{% else %}
   <meta property="og:title" content="{{ page.title }}" />{% endif %}
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ url }}" />
+  <meta property="og:url" content="https://www.memchain.ai/" />
   {% if page.image %}
   <meta property="og:image" content="{{ page.image | absolute_url }}" />{% endif %}
   {% if page.description %}
   <meta property="og:description" content="{{ page.description }}" />{% endif %}
   <meta name="twitter:card" content="summary" />
   {% if site.data.seo.meta_twitter_site %}
-  <meta name="twitter:site" content="{{ site.seo.meta_twitter_site }}" />{% endif %}
+  <meta name="twitter:site" content="{{ site.data.seo.meta_twitter_site }}" />{% endif %}
   {% if site.data.seo.meta_twitter_creator %}
-  <meta name="twitter:creator" content="{{ site.seo.meta_twitter_creator }}" />{% endif %}
+  <meta name="twitter:creator" content="{{ site.data.seo.meta_twitter_creator }}" />{% endif %}
 
 </head>
 
