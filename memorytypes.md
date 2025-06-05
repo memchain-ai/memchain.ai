@@ -5,6 +5,8 @@ description: Memory Types Supported
 intro_image: "images/illustrations/homepage-image-4.png"
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
+description: Memory Management Platform for AI
+meta_title: Enterprise-Grade Memory Management for AI 
 ---
 
 # Cognitive Memory Types

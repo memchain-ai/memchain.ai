@@ -1,11 +1,11 @@
 ---
 title: MemChain AI - Agentic AI Memory Management Platform
 layout: home
-description: Memory Management Platform for AI Solutions
 intro_image: "images/illustrations/homepage-image-1.png"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
 show_call_box: true
+description: Memory Management Platform for AI
 meta_title: Enterprise-Grade Memory Management for AI 
 ---
 
