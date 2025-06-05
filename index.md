@@ -5,8 +5,10 @@ intro_image: "images/illustrations/homepage-image-1.png"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
 show_call_box: true
-description: Memory Management Platform for AI
-meta_title: Enterprise-Grade Memory Management for AI 
+description: "MemChain AI is an enterprise-grade cognitive memory management platform for AI systems. Unlock intelligent memory capabilities, persistent context retention, and seamless AI collaboration with MemChain's comprehensive memory backbone."
+meta_title: "MemChain AI - Enterprise Memory Management Platform for Artificial Intelligence"
+keywords: "MemChain, MemChain AI, AI memory management, cognitive memory platform, enterprise AI, agentic AI, AI memory backbone, artificial intelligence memory"
+image: "/images/illustrations/homepage-image-1.png"
 ---
 
 # Intelligent Memory Backbone for AI

@@ -1,8 +1,20 @@
 baseurl: "/"
 permalink: pretty
 title: "MemChain AI"
+description: "Enterprise-Grade Memory Management Platform for AI - MemChain provides intelligent memory backbone for AI systems with human-like memory capabilities."
+url: "https://www.memchain.ai"
+# Override for production builds
+production_url: "https://www.memchain.ai"
+author: "MemChain AI"
+twitter:
+  username: memchainai
+  card: summary_large_image
 
-logo:
+# Logo configuration for Jekyll SEO
+logo: "/images/logo/logo-memchain.svg"
+
+# Custom logo configuration for theme
+theme_logo:
   mobile: "images/logo/isotype-memchain.svg"
   mobile_height: "48px"
   mobile_width: "48px"
@@ -49,6 +61,8 @@ sass:
 
 plugins:
   - jekyll-environment-variables
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
   - Gemfile
