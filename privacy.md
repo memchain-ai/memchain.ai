@@ -6,7 +6,7 @@ intro_image: "/images/privacy.png"
 intro_image_absolute: false
 intro_image_hide_on_mobile: true
 show_call_box: false
-description: Memory Management Platform for AI - Terms of Service
+description: Memory Management Platform for AI - Privacy
 meta_title: Enterprise-Grade Memory Management for AI
 ---
 <!-- <img src="/images/about.png" width="500"> -->
