@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - MemChain AI</title>
+    <script src="/scripts.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    <div class="bg-overlay"></div>
+
+    <!-- Neural Network Animation -->
+    <div class="neural-network">
+        <canvas class="neural-canvas" id="neuralCanvas"></canvas>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/images/logo-text.svg" alt="MemChain AI"
+                    style="width: 80px; height: 80px; background-color: white; border-radius: 10px; padding: 8px;">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features/">Features</a></li>
+                <li><a href="/usecases/">Use Cases</a></li>
+                <li><a href="/compliance/">Compliance</a></li>
+                <li><a href="/about/" class="active">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <a href="/contact/" class="cta-button">Request Demo</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="/" onclick="toggleMobileMenu()">Home</a></li>
+            <li><a href="/features/" onclick="toggleMobileMenu()">Features</a></li>
+            <li><a href="/usecases/" onclick="toggleMobileMenu()">Use Cases</a></li>
+            <li><a href="/compliance/" onclick="toggleMobileMenu()">Compliance</a></li>
+            <li><a href="/about/" class="active" onclick="toggleMobileMenu()">About</a></li>
+            <li><a href="/contact/" onclick="toggleMobileMenu()">Contact</a></li>
+        </ul>
+        <a href="/contact/" class="mobile-cta-button" onclick="toggleMobileMenu()">Request Demo</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title fade-in">About MemChain AI</h1>
+            <p class="page-subtitle fade-in">
+                Pioneering the future of AI with human-like memory capabilities that transform how artificial
+                intelligence learns, remembers, and evolves.
+            </p>
+
+            <div class="about-content">
+                <section class="about-section fade-in">
+                    <div class="about-text">
+                        <h2 class="about-heading">The Birth of MemChain AI</h2>
+                        <p class="about-description">
+                            MemChain AI was born from a simple but powerful idea: intelligent agents should remember
+                            what matters. In a world racing toward autonomous systems, most AI tools still forget
+                            everything between prompts. They lack memory, context, and continuity. We set out to fix
+                            that.</p>
+                        <p class="about-description" style="margin-top: 25px;">
+                            Our team came together after years of building large-scale AI platforms, enterprise systems,
+                            and agent frameworks. We saw the same pattern over and over. Smart agents with no memory.
+                            Workarounds that didn’t scale. Hacky, fragile context windows that collapsed under
+                            real-world complexity. So we decided to build the memory layer that agentic AI was missing.
+                        </p>
+                    </div>
+                </section>
+
+                <div class="about-content">
+                    <section class="about-section fade-in">
+                        <div class="about-text">
+                            <h2 class="about-heading">Our Mission</h2>
+                            <p class="about-description">
+                                At MemChain AI, we believe that the next breakthrough in artificial intelligence lies
+                                not in
+                                making AI faster or more powerful, but in giving it the ability to remember, learn, and
+                                build upon past experiences just like humans do. <b>Our mission is to bridge the gap
+                                    between
+                                    stateless AI systems</b> and truly intelligent, context-aware artificial minds that
+                                can
+                                grow and
+                                evolve over time.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="about-section fade-in">
+                        <div class="about-text">
+                            <h2 class="about-heading">The Memory Problem</h2>
+                            <p class="about-description">
+                                Today's AI systems, no matter how sophisticated, suffer from a fundamental limitation:
+                                they
+                                forget. Each interaction starts from scratch, without the benefit of accumulated
+                                knowledge,
+                                learned preferences, or contextual understanding built over time. This creates a barrier
+                                to
+                                truly intelligent AI that can provide personalized, contextual, and continuously
+                                improving
+                                experiences.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="about-section fade-in">
+                        <div class="about-text">
+                            <h2 class="about-heading">Our Solution</h2>
+                            <p class="about-description">
+                                MemChain AI has developed a revolutionary cognitive memory platform that gives AI
+                                systems
+                                the ability to retain, recall, and reason across time, users, and systems. Our
+                                technology
+                                enables AI to build persistent memory, learn from every interaction, and provide
+                                increasingly intelligent and personalized experiences. We're not just storing data –
+                                we're
+                                creating AI that truly learns and grows.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="about-section fade-in">
+                        <div class="about-text">
+                            <h2 class="about-heading">Enterprise Focus</h2>
+                            <p class="about-description">
+                                We understand that enterprise AI needs are complex and demanding. That's why MemChain AI
+                                is
+                                built from the ground up with enterprise-grade security, compliance frameworks, and
+                                scalability in mind. Our platform supports multi-tenant architectures, federated memory
+                                sharing, and the strict governance requirements that modern businesses demand while
+                                delivering the memory capabilities that make AI truly intelligent.
+                            </p>
+                            <p class="about-description" style="margin-top: 25px;">
+                                Built on advanced semantic search, vector embeddings, graph memory data stores, and
+                                federated architecture principles,
+                                MemChain AI delivers enterprise-grade memory management that scales with your business
+                                needs. Our platform supports multi-tenant environments, ensures data privacy and
+                                security,
+                                and integrates seamlessly with existing AI infrastructure across cloud, on-premise, and
+                                hybrid deployments.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="about-section fade-in">
+                        <div class="about-text">
+                            <h2 class="about-heading">The Future of AI</h2>
+                            <p class="about-description">
+                                We envision a future where AI systems are not just tools, but intelligent partners that
+                                understand context, remember preferences, learn from mistakes, and continuously improve
+                                their ability to help humans achieve their goals. MemChain AI is building the foundation
+                                for
+                                this future, one memory at a time.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="about-section fade-in">
+                        <div class="about-text">
+                            <h2 class="about-heading">Join Our Journey</h2>
+                            <p class="about-description">
+                                Whether you're a healthcare organization looking to improve patient care, a financial
+                                institution seeking better fraud detection, or a technology company building the next
+                                generation of AI applications, MemChain AI provides the memory foundation that
+                                transforms
+                                good AI into truly intelligent AI. Join us in revolutionizing how artificial
+                                intelligence
+                                learns, remembers, and evolves.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MemChain AI. All rights reserved. | The Enterprise AI Memory Company</p>
+            <div style="margin-top: 1rem;">
+                <a href="/privacy/"
+                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none; margin-right: 2rem; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='white'"
+                    onmouseout="this.style.color='rgba(255, 255, 255, 0.8)'">Privacy Policy</a>
+                <a href="/terms/"
+                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='white'"
+                    onmouseout="this.style.color='rgba(255, 255, 255, 0.8)'">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

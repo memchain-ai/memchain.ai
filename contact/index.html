@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MemChain AI</title>
+    <script src="/scripts.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    <div class="bg-overlay"></div>
+
+    <!-- Neural Network Animation -->
+    <div class="neural-network">
+        <canvas class="neural-canvas" id="neuralCanvas"></canvas>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/images/logo-text.svg" alt="MemChain AI"
+                    style="width: 80px; height: 80px; background-color: white; border-radius: 10px; padding: 8px;">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features/">Features</a></li>
+                <li><a href="/usecases/">Use Cases</a></li>
+                <li><a href="/compliance/">Compliance</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/" class="active">Contact</a></li>
+            </ul>
+            <a href="/contact/" class="cta-button">Request Demo</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="/" onclick="toggleMobileMenu()">Home</a></li>
+            <li><a href="/features/" onclick="toggleMobileMenu()">Features</a></li>
+            <li><a href="/usecases/" onclick="toggleMobileMenu()">Use Cases</a></li>
+            <li><a href="/compliance/" onclick="toggleMobileMenu()">Compliance</a></li>
+            <li><a href="/about/" onclick="toggleMobileMenu()">About</a></li>
+            <li><a href="/contact/" class="active" onclick="toggleMobileMenu()">Contact</a></li>
+        </ul>
+        <a href="/contact/" class="mobile-cta-button" onclick="toggleMobileMenu()">Request Demo</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title fade-in">Get in Touch</h1>
+            <p class="page-subtitle fade-in">
+                Ready to transform your AI with persistent memory? Let's discuss how MemChain AI can revolutionize your
+                business operations.
+            </p>
+
+            <div class="contact-content fade-in">
+                <div class="col-12">
+                    <div class="text-center mb-2">
+                        <h1 class="title">Request for a demo/meeting</h1>
+                        <p class="lead mb-3">Book a consultation to discuss how MemChain AI can transform your business
+                        </p>
+                    </div>
+                    <!-- Calendly inline widget begin -->
+                    <div class="calendly-container">
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/memchain/"
+                            style="min-width:320px;height:700px;width:100%;">
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                        async></script>
+                    <!-- Calendly inline widget end -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MemChain AI. All rights reserved. | The Enterprise AI Memory Company</p>
+            <div style="margin-top: 1rem;">
+                <a href="/privacy/"
+                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none; margin-right: 2rem; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='white'"
+                    onmouseout="this.style.color='rgba(255, 255, 255, 0.8)'">Privacy Policy</a>
+                <a href="/terms/"
+                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='white'"
+                    onmouseout="this.style.color='rgba(255, 255, 255, 0.8)'">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
