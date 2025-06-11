@@ -11,9 +11,9 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Features Page -->
+  <!-- Services Page -->
   <url>
-    <loc>https://memchain.ai/features/</loc>
+    <loc>https://memchain.ai/services/</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
