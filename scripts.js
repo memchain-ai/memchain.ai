@@ -182,7 +182,7 @@ class NeuralNetwork {
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 if (distance < maxDistance) {
-                    const opacity = (1 - distance / maxDistance) * 0.3;
+                    const opacity = (1 - distance / maxDistance) * 0.6;
                     const pulse = Math.sin(time * 3 + i * 0.1) * 0.5 + 0.5;
 
                     // Connection line
@@ -191,13 +191,13 @@ class NeuralNetwork {
                     this.ctx.lineTo(neuron2.x, neuron2.y);
 
                     if (neuron1.active || neuron2.active) {
-                        // Active connection - blue
-                        this.ctx.strokeStyle = `rgba(79, 172, 254, ${opacity * pulse * 0.8})`;
-                        this.ctx.lineWidth = 1.5;
+                        // Active connection - bright blue #009EDE
+                        this.ctx.strokeStyle = `rgba(0, 158, 222, ${opacity * pulse * 1.5})`;
+                        this.ctx.lineWidth = 2.5;
                     } else {
-                        // Regular connection - white
-                        this.ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * pulse * 0.4})`;
-                        this.ctx.lineWidth = 0.8;
+                        // Regular connection - soft blue #009EDE
+                        this.ctx.strokeStyle = `rgba(0, 158, 222, ${opacity * pulse * 0.8})`;
+                        this.ctx.lineWidth = 1.5;
                     }
 
                     this.ctx.stroke();
@@ -210,7 +210,7 @@ class NeuralNetwork {
 
                         this.ctx.beginPath();
                         this.ctx.arc(pulseX, pulseY, 2, 0, Math.PI * 2);
-                        this.ctx.fillStyle = `rgba(79, 172, 254, ${opacity * 0.8})`;
+                        this.ctx.fillStyle = `rgba(0, 158, 222, ${opacity * 0.8})`;
                         this.ctx.fill();
                     }
                 }
