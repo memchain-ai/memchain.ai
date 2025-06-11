@@ -30,7 +30,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(-45deg, #1e3c72, #2a5298, #3f51b5, #283593, #1a237e, #2196f3, #1e3c72);
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #1976d2, #1565c0, #0d47a1, #2196f3, #1e3c72);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     z-index: -2;
@@ -64,9 +64,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 50%, rgba(33, 150, 243, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(25, 118, 210, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
     z-index: -1;
 }
 
@@ -734,128 +734,472 @@ footer {
     transform: translateY(0) !important;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
+/* Responsive Design - Mobile First Approach */
+
+/* Base styles for mobile (320px and up) */
+@media (min-width: 320px) {
     .container {
-        max-width: 95%;
+        max-width: 100%;
+        padding: 0 1rem;
     }
 
-    nav {
-        padding: 1rem 1.5rem;
+    .hero {
+        padding: 1rem;
+        min-height: 100vh;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+
+    .hero-description {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        padding: 0 0.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem 1rem;
+        margin: 0 0.5rem;
+    }
+
+    .feature-title {
+        font-size: 1.1rem;
+    }
+
+    .feature-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .page-title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        padding: 0 1rem;
+    }
+
+    .page-subtitle {
+        font-size: clamp(1rem, 3vw, 1.1rem);
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 2rem 0.5rem;
+    }
+
+    .problem-section,
+    .cta-section {
+        padding: 2rem 1rem;
+        margin: 2rem 0.5rem;
+    }
+
+    .problem-title,
+    .cta-title {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .problem-text,
+    .cta-text {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        line-height: 1.6;
     }
 }
 
-@media (max-width: 768px) {
+/* Small phones (375px and up) */
+@media (min-width: 375px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .feature-card {
+        padding: 1.75rem 1.25rem;
+        margin: 0;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        max-width: 320px;
+    }
+}
+
+/* Large phones (414px and up) */
+@media (min-width: 414px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .hero {
+        padding: 1.5rem;
+    }
+
+    .feature-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        max-width: 350px;
+    }
+}
+
+/* Mobile devices (up to 767px) - Show hamburger menu */
+@media (max-width: 767px) {
+    .nav-links {
+        display: none !important;
+    }
+
+    .cta-button {
+        display: none !important;
+    }
+
+    .mobile-menu-toggle {
+        display: block !important;
+    }
+}
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
     .nav-links {
         display: none;
+        /* Still hidden on tablets for better UX */
     }
 
     .cta-button {
         display: none;
+        /* Still hidden on tablets */
     }
 
     .mobile-menu-toggle {
         display: block;
     }
 
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .hero {
+        padding: 2rem;
     }
 
-    .feature-card {
-        padding: 2rem 1.5rem;
+    .hero h1 {
+        font-size: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.2rem, 3vw, 1.4rem);
+    }
+
+    .hero-description {
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
+        max-width: 600px;
     }
 
     .hero-buttons {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
     }
 
     .hero-buttons .btn-primary,
     .hero-buttons .btn-secondary {
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
+        width: auto;
+        min-width: 180px;
+        max-width: none;
     }
 
-    nav {
-        padding: 1rem;
-    }
-
-    .logo img {
-        width: 60px !important;
-        height: 60px !important;
-    }
-
-    .page-title {
-        font-size: 2.5rem;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .cta-title {
-        font-size: 2rem;
-    }
-
-    .problem-title {
-        font-size: 2rem;
-    }
-
-    .about-section {
-        padding: 2rem 1.5rem;
-    }
-
-    .main-content {
-        padding: 6rem 1rem 4rem;
-    }
-
-    .section {
-        padding: 4rem 1rem;
-    }
-
-    .problem-section {
-        padding: 3rem 1.5rem;
-    }
-
-    .cta-section {
-        padding: 3rem 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .page-title {
-        font-size: 2rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
     }
 
     .feature-card {
-        padding: 1.5rem 1rem;
+        padding: 2rem;
     }
 
-    .about-section {
-        padding: 1.5rem 1rem;
+    .page-title {
+        font-size: clamp(2.5rem, 5vw, 3rem);
     }
 
-    .mobile-nav-links a {
-        font-size: 1.2rem;
+    .section-title {
+        font-size: clamp(2.5rem, 5vw, 3rem);
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .problem-section,
+    .cta-section {
+        padding: 3rem 2rem;
+        margin: 3rem 0;
+    }
+
+    .problem-title,
+    .cta-title {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+    }
+
+    .logo img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
+
+/* Large tablets and small laptops (1024px and up) */
+@media (min-width: 1024px) {
+    .nav-links {
+        display: flex;
+        /* Show navigation on larger screens */
+    }
+
+    .cta-button {
+        display: inline-block;
+        /* Show CTA button */
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        /* Hide mobile menu toggle */
+    }
+
+    .hero h1 {
+        font-size: clamp(4rem, 6vw, 5.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
     }
 
     .hero-description {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        max-width: 700px;
     }
 
-    .page-subtitle {
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
+    .section {
+        padding: 4rem 2rem;
+    }
+
+    .problem-section,
+    .cta-section {
+        padding: 4rem 2.5rem;
+    }
+
+    .logo img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+}
+
+/* Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        padding: 0 2rem;
+    }
+
+    nav {
+        padding: 1rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(5rem, 8vw, 6rem);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .logo img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+}
+
+/* Large desktop (1440px and up) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .hero h1 {
+        font-size: 6rem;
+    }
+
+    .features-grid {
+        gap: 2.5rem;
+    }
+}
+
+/* Ultra-wide screens (1920px and up) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+
+    .features-grid {
+        gap: 3rem;
+    }
+}
+
+/* Specific mobile device optimizations */
+
+/* iPhone SE and similar small screens */
+@media (max-width: 375px) and (max-height: 667px) {
+    header {
+        position: fixed;
+        top: 0;
+        height: auto;
+        min-height: 60px;
+    }
+
+    nav {
+        padding: 0.5rem 1rem;
+        min-height: 60px;
+    }
+
+    .logo img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    /* Hide desktop navigation on iPhone SE */
+    .nav-links {
+        display: none !important;
+    }
+
+    .cta-button {
+        display: none !important;
+    }
+
+    /* Show mobile menu toggle on iPhone SE */
+    .mobile-menu-toggle {
+        display: block !important;
+    }
+
+    .hero {
+        min-height: 100vh;
+        padding: 70px 0.5rem 1rem 0.5rem;
+        padding-top: 70px;
+        /* Account for fixed header */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+        padding: 0 0.25rem;
+    }
+
+    .hero-buttons {
+        gap: 0.75rem;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+        max-width: 250px;
+    }
+
+    .feature-card {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .mobile-nav-links a {
         font-size: 1.1rem;
+    }
+
+    .page-title {
+        font-size: 1.6rem;
+        margin-top: 1rem;
+    }
+
+    .section {
+        padding: 1.5rem 0.5rem;
+    }
+}
+
+/* iPhone 12/13/14 and similar */
+@media (max-width: 390px) and (max-height: 844px) {
+    .hero {
+        padding: 1.25rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* iPad and tablet landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 1.5rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* iPad Pro and large tablets */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 4.5rem;
     }
 }
 
