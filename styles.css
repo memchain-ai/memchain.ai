@@ -404,7 +404,7 @@ nav {
 /* Main Content */
 .main-content {
     min-height: 100vh;
-    padding: 8rem 2rem 4rem;
+    padding: 10rem 2rem 4rem;
     position: relative;
 }
 
@@ -419,8 +419,8 @@ nav {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 2rem;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
     background: var(--primary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
