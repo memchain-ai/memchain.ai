@@ -274,7 +274,7 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 2rem;
+    padding: 8rem 2rem 2rem;
     position: relative;
 }
 
@@ -769,7 +769,7 @@ footer {
     }
 
     .hero {
-        padding: 1rem;
+        padding: 6rem 1rem 1rem;
         min-height: 100vh;
     }
 
@@ -929,7 +929,7 @@ footer {
     }
 
     .hero {
-        padding: 2rem;
+        padding: 8rem 2rem 2rem;
     }
 
     .hero h1 {
