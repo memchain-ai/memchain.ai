@@ -1501,7 +1501,7 @@ footer {
 }
 
 .use-case-impact {
-    background: rgba(79, 172, 254, 0.2);
+    background: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 1rem;
     border-left: 4px solid #4facfe;
@@ -1516,7 +1516,7 @@ footer {
 }
 
 .impact-text {
-    color: white;
+    color: #009EDE;
     font-weight: 500;
     font-size: 0.95rem;
 }
@@ -1635,7 +1635,7 @@ footer {
 }
 
 .compliance-status {
-    background: rgba(79, 172, 254, 0.2);
+    background: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 1rem;
     border-left: 4px solid #4facfe;
@@ -1650,7 +1650,7 @@ footer {
 }
 
 .status-text {
-    color: white;
+    color: #009EDE;
     font-weight: 500;
     font-size: 0.95rem;
 }
