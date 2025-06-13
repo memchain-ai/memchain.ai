@@ -589,8 +589,12 @@
                 const items = category.querySelectorAll('.faq-item');
                 
                 items.forEach(item => {
-                    const question = item.querySelector('.faq-question').textContent.toLowerCase();
-                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    const questionElement = item.querySelector('.faq-question');
+                    const answerElement = item.querySelector('.faq-answer');
+                    
+                    // Check if elements exist before accessing textContent
+                    const question = questionElement ? questionElement.textContent.toLowerCase() : '';
+                    const answer = answerElement ? answerElement.textContent.toLowerCase() : '';
                     
                     if (question.includes(searchTerm) || answer.includes(searchTerm) || searchTerm === '') {
                         item.style.display = 'block';
