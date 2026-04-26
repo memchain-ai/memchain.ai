@@ -1493,3 +1493,224 @@ footer {
         box-shadow: none;
     }
 }
+
+/* Team Page */
+.team-section-label {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #4facfe !important;
+    margin-bottom: 0.75rem;
+}
+
+.team-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 2px;
+    margin: 0 auto 3rem;
+}
+
+.team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: white !important;
+}
+
+.team-left {
+    flex-shrink: 0;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-right {
+    flex: 1;
+    min-width: 0;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover::before {
+    transform: scaleX(1);
+}
+
+.team-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+}
+
+.team-photo {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+    background: linear-gradient(135deg, #2a5298 0%, #4facfe 100%);
+}
+
+.team-photo img {
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.team-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.team-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+    margin-bottom: 0.3rem;
+}
+
+.team-role {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4facfe !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+}
+
+.team-bio {
+    font-size: 0.95rem;
+    color: white !important;
+    line-height: 1.75;
+}
+
+.team-bio p {
+    color: white !important;
+    margin-bottom: 0.9rem;
+}
+
+.team-bio p:last-child {
+    margin-bottom: 0;
+}
+
+.team-bio strong {
+    color: white !important;
+    font-weight: 600;
+}
+
+.team-highlights-label {
+    font-weight: 700;
+    color: #4facfe !important;
+    margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.team-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.9rem 0;
+}
+
+.team-highlights li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: white !important;
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.team-highlights li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #4facfe;
+    font-size: 0.8rem;
+    top: 0.15rem;
+}
+
+.team-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.team-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.85) !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.team-link:hover {
+    background: #0077b5;
+    border-color: #0077b5;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 119, 181, 0.4);
+}
+
+@media (max-width: 640px) {
+    .team-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .team-left {
+        width: 100%;
+    }
+
+    .team-links {
+        justify-content: center;
+    }
+
+    .team-highlights {
+        text-align: left;
+    }
+}

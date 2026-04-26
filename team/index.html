@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - MemChain AI</title>
+    <script src="/scripts.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        .page-title {
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: white !important;
+            background-clip: unset !important;
+            color: white !important;
+        }
+        .page-subtitle {
+            color: white !important;
+            -webkit-text-fill-color: white !important;
+            opacity: 1;
+        }
+        .team-section-label {
+            color: #4facfe !important;
+            -webkit-text-fill-color: #4facfe !important;
+        }
+        .team-card,
+        .team-name,
+        .team-role,
+        .team-bio,
+        .team-bio p,
+        .team-bio strong,
+        .team-highlights-label,
+        .team-highlights li {
+            color: white !important;
+            -webkit-text-fill-color: white !important;
+        }
+        .team-card {
+            display: grid !important;
+            grid-template-columns: 230px 1fr !important;
+            align-items: start !important;
+        }
+        .team-left {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+        .team-right {
+            min-width: 0 !important;
+        }
+        @media (max-width: 640px) {
+            .team-card {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    <div class="bg-overlay"></div>
+
+    <!-- Neural Network Animation -->
+    <div class="neural-network">
+        <canvas class="neural-canvas" id="neuralCanvas"></canvas>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/images/logo-text.svg" alt="MemChain AI"
+                    style="width: 80px; height: 80px; background-color: white; border-radius: 10px; padding: 8px;">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features/">Features</a></li>
+                <li><a href="/usecases/">Use Cases</a></li>
+                <li><a href="/compliance/">Compliance</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/team/" class="active">Our Team</a></li>
+            </ul>
+            <a href="/contact/" class="cta-button">Request Demo</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="/" onclick="toggleMobileMenu()">Home</a></li>
+            <li><a href="/features/" onclick="toggleMobileMenu()">Features</a></li>
+            <li><a href="/usecases/" onclick="toggleMobileMenu()">Use Cases</a></li>
+            <li><a href="/compliance/" onclick="toggleMobileMenu()">Compliance</a></li>
+            <li><a href="/about/" onclick="toggleMobileMenu()">About</a></li>
+            <li><a href="/contact/" onclick="toggleMobileMenu()">Contact</a></li>
+            <li><a href="/team/" class="active" onclick="toggleMobileMenu()">Our Team</a></li>
+        </ul>
+        <a href="/contact/" class="mobile-cta-button" onclick="toggleMobileMenu()">Request Demo</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title fade-in">Meet Our Leadership Team</h1>
+            <p class="page-subtitle fade-in">
+                Visionary leaders with decades of combined experience in AI, enterprise technology,
+                and product innovation, united by a mission to give AI the gift of memory.
+            </p>
+            <div class="team-divider"></div>
+
+            <div class="team-list fade-in">
+
+                <!-- Suresh Kalavala -->
+                <div class="team-card">
+                    <div class="team-left">
+                        <div class="team-photo" style="background-color: white; border-radius: 10px; padding: 8px; margin-top: 2rem; margin-right: 2rem;">
+                            <img src="/images/Suresh.jpg" alt="Suresh Kalavala" width="250">
+                        </div>
+                        <h2 class="team-name" style="margin-right: 2rem;">Suresh Kalavala</h2>
+                        <p class="team-role" style="margin-right: 2rem;">CEO &amp; Founder</p>
+                        <div class="team-links">
+                            <a href="https://www.linkedin.com/in/kalavala/" class="team-link" title="LinkedIn" style="margin-right: 2rem;"
+                                target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20" height="20">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-right" style="margin-left: 2rem;">
+                        <div class="team-bio">
+                            <p style="font-size: 16px; line-height: 1.75; margin-top: 1rem; text-align: justify;">
+                                <strong>Suresh Kalavala</strong>  is a seasoned technology leader with over 27 years of experience driving innovation for Fortune 15 companies. A two-time startup founder and proven strategist, he brings deep expertise spanning AI/ML, enterprise architecture, cloud modernization, cybersecurity, and large-scale product development. In leadership roles including CTO for AI and Executive Partner at IBM, he has led global teams, delivered multi-cloud AI platforms, and implemented responsible AI solutions. His track record includes managing large enterprise transformations with substantial budgets and operational complexity, as well as founding a successful IoT startup in 2018, demonstrating an ability to operate effectively at both ends of the scale spectrum.
+                            </p>
+                            <p style="font-size: 16px; line-height: 1.75; margin-top: 1rem; text-align: justify;">
+                                As the visionary behind MemChain AI, Suresh is building secure, scalable AI infrastructure to address real-world enterprise challenges. His hands-on technical leadership across AI/ML, cloud, cybersecurity, and enterprise architecture ensures MemChain AI is built on a rock-solid, future-proof foundation. With a career dedicated to advising C-suite executives, scaling high-performance global teams, and delivering enterprise-grade platforms with a focus on speed to market and long-term sustainability, Suresh brings a rare combination of deep technical acumen and strategic business judgment to every initiative he leads.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- David Montgomery -->
+                <div class="team-card" style="margin-top: 3rem;">
+                    <div class="team-left">
+                        <div class="team-photo" style="background-color: white; border-radius: 10px; padding: 8px; margin-top: 2rem; margin-right: 2rem;">
+                            <img src="/images/david.png" alt="David Montgomery" width="250">
+                        </div>
+                        <h2 class="team-name">David Montgomery</h2>
+                        <p class="team-role" style="margin-right: 2rem;">Co-Founder &amp; COO</p>
+                        <div class="team-links">
+                            <a href="https://www.linkedin.com/in/mdamontgomery/" class="team-link" title="LinkedIn"
+                                target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20" height="20">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11。452zM22。２２５ ０H１。７７１C。７９２ ０ ０ 。７７４ ０ １。７２９v２０。５４２C０ ２３。２２７。７９２ ２４ １。７７１ ２４h２０。４５１C２３。２ ２４ ２４ ２３。２２７ ２４ ２２。２７１V１。７２９C２４ 。７７４ ２３。２ ０ ２２。２２２ ０h。００３z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-right" style="margin-left: 2rem;">
+                        <div class="team-bio">
+                            <p style="font-size: 16px; line-height: 1.75; margin-top: 1rem; text-align: justify;">
+                                David Montgomery is a C-level technology executive and AI strategist with a proven track record of leading large-scale technology delivery and building high-performing organizations across Fortune 100 enterprises. He has held senior leadership roles at IBM, Hewlett Packard Enterprise, Nationwide Insurance, and Cardinal Health, where he led enterprise PMOs, consulting and delivery practices, and architecture organizations supporting complex, multi-million-dollar transformations. His work has earned significant recognition, including two HPE Public Sector Executive of the Year awards and the National Black Engineer of the Year President's Award for IT. He has also led teams recognized by NASCIO for Agile Innovation and by IBM for Global Technology Excellence, and directed premier public sector accounts for HPE and Oracle in the U.S.
+                            </p>
+                            <p style="font-size: 16px; line-height: 1.75; margin-top: 1rem; text-align: justify;">
+                                As Chief Operating Officer of MemChain AI, David drives operational execution, AI product delivery, and go-to-market scalability. He brings deep expertise in scaling technology solutions, executing mission-critical programs, and aligning business strategy with AI-driven innovation, honed across decades of work spanning enterprise and government sectors as an executive sponsor, program leader, and operator. David combines enterprise-scale execution discipline with startup agility, making him uniquely positioned to translate AI innovation into scalable, revenue-generating solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Alberto F -->
+                <div class="team-card" style="margin-top: 3rem;">
+                    <div class="team-left">
+                        <div class="team-photo" style="background-color: white; border-radius: 10px; padding: 8px; margin-top: 2rem; margin-right: 2rem;">
+                            <img src="/images/alberto.png" alt="Alberto Santiago" width="250">
+                        </div>
+                        <h2 class="team-name" style="margin-right: 2rem;">Alberto F</h2>
+                        <p class="team-role" style="margin-right: 2rem;">Co-Founder &amp; CTO</p>
+                        <div class="team-links">
+                            <!-- <a href="https://www.linkedin.com/in/albertosantiago/" class="team-link" title="LinkedIn"
+                                target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20" height="20">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1。139-.925 2。065-2。064 2。065zm1。782 13。019H3。555V9h3。564v11。452zM22。２２５ ０H１。７７１C。７９２ ０ ０ 。７７４ ０ １。７２９v２０。５４２C０ ２３。２２７。７９２ ２４ １。７７１ ２４h２０。４５１C２３。２ ２４ ２４ ２３。２２７ ２４ ２２。２７１V１。７₂９C２４ 。７７４ ₂₃。₂ ₀ ₂₂。₂₂₂ ₀h。₀₀₃z"/>
+                                </svg>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="team-right" style="margin-left: 2rem;">
+                        <div class="team-bio">
+                            <p style="font-size: 16px; line-height: 1.75; margin-top: 1rem; text-align: justify;">
+                                Alberto is a seasoned technologist with over 20 years of experience spanning AI infrastructure, Linux systems, cloud-native architecture, and security. He has led GPU-powered AI platform initiatives in partnership with NVIDIA, Run:AI, and Dell, architecting and deploying secure, high-performance environments powering real-world RAG, Co-Pilot, and agentic AI workloads across cloud and on-premises settings. Alberto is also a highly respected open-source contributor with a strong presence on Hugging Face, where he has published over 45 models and several large-scale datasets, including quantized Mistral variants and custom Llama-3 implementations fine-tuned using frameworks like Unsloth and TRL. His open-source portfolio reflects deep expertise in building scalable, production-ready AI systems that are widely adopted by the developer community.
+                            </p>
+                            <p style="font-size: 16px; line-height: 1.75; margin-top: 1rem; text-align: justify;">
+                                At MemChain AI, Alberto plays a pivotal role as the CTO in shaping the platform's technical architecture, deployment strategy, and future-facing capabilities for agentic AI. He brings a rare combination of architectural vision and hands-on execution, drawing on extensive experience across product development, infrastructure security, DevOps, and applied AI prototyping. A trusted technical leader across support, product, and security teams, he thrives in high-pressure environments and consistently delivers scalable, secure system design. With roots in Argentina and a career that has taken him through Mexico, Brazil, and the United States, Alberto also brings a valuable cross-continental network spanning the Americas, opening strategic partnerships, talent pipelines, and go-to-market opportunities across the region.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MemChain AI. All rights reserved. | The Enterprise AI Memory Company</p>
+            <div style="margin-top: 1rem;">
+                <a href="/privacy/"
+                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none; margin-right: 2rem; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='white'"
+                    onmouseout="this.style.color='rgba(255, 255, 255, 0.8)'">Privacy Policy</a>
+                <a href="/terms/"
+                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='white'"
+                    onmouseout="this.style.color='rgba(255, 255, 255, 0.8)'">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
