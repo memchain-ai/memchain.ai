@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Brain Systems | CoThink - AI Meets Human Imagination</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .manifesto-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid rgba(226, 232, 240, 0.7);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #3b82f6;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xl">RBS</div>
+                        <span class="ml-3 text-xl font-bold text-gray-900">Right Brain Systems</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#product" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Product</a>
+                    <a href="#manifesto" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Manifesto</a>
+                    <a href="#story" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Our Story</a>
+                    <a href="#values" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Values</a>
+                    <button class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:opacity-90 transition duration-300">Join Waitlist</button>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+                <a href="#product" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Product</a>
+                <a href="#manifesto" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Manifesto</a>
+                <a href="#story" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Our Story</a>
+                <a href="#values" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Values</a>
+                <button class="block w-full text-left px-3 py-2 text-base font-medium text-blue-600 hover:bg-gray-50">Join Waitlist</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        <span class="gradient-text">CoThink</span> <br>
+                        Where AI Meets Human Imagination
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        We don't teach you how to use AI—we teach you how to think with it. Replace passive prompting with purposeful co-creation and defend human ingenuity.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-3 rounded-md text-lg font-medium hover:opacity-90 transition duration-300 glow">
+                            Get Early Access
+                        </button>
+                        <button class="border border-blue-500 text-blue-500 px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-50 transition duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative z-10 bg-white rounded-2xl shadow-xl overflow-hidden">
+                        <div class="bg-gray-800 h-8 flex items-center px-4">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-gradient-to-br from-gray-50 to-gray-100">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <div class="font-medium">CoThink Assistant</div>
+                                    <div class="text-xs text-gray-500">Thinking partner ready</div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-sm mb-4">
+                                <div class="text-sm text-gray-700">
+                                    <p class="font-medium mb-1">Human:</p>
+                                    <p>How can we approach this problem differently?</p>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 rounded-lg p-4 shadow-sm border border-blue-100">
+                                <div class="text-sm text-gray-700">
+                                    <p class="font-medium mb-1 text-blue-600">CoThink:</p>
+                                    <p>Let's challenge assumptions first. What if we inverted the problem? Also, consider these 3 lenses: 1) Historical context 2) Cross-industry parallels 3) Future scenarios. Which would you like to explore first?</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex items-center">
+                                <input type="text" placeholder="Continue the conversation..." class="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <button class="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition duration-300">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                    <div class="absolute -top-4 -left-4 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">87%</div>
+                    <div class="text-gray-500">Better critical thinking</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">3.5x</div>
+                    <div class="text-gray-500">More creative outputs</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">64%</div>
+                    <div class="text-gray-500">Reduction in AI reliance</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-blue-400 mb-2">92%</div>
+                    <div class="text-gray-500">User satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="product" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">The <span class="gradient-text">CoThink</span> Experience</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our platform is designed to reawaken curiosity, sharpen cognitive depth, and elevate human-AI collaboration.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white rounded-xl p-8 shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center text-blue-500 mb-6">
+                        <i class="fas fa-dumbbell text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Prompt Gym</h3>
+                    <p class="text-gray-600">
+                        Structured exercises to practice cognitive collaboration with AI, strengthening your thinking muscles.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white rounded-xl p-8 shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center text-purple-500 mb-6">
+                        <i class="fas fa-layer-group text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">MetaGPT</h3>
+                    <p class="text-gray-600">
+                        Build metacognitive habits by reflecting on your thinking patterns and improving them over time.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white rounded-xl p-8 shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center text-green-500 mb-6">
+                        <i class="fas fa-check-circle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Verify This</h3>
+                    <p class="text-gray-600">
+                        Stay grounded in truth with tools that help you fact-check and validate AI-generated content.
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white rounded-xl p-8 shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-500 mb-6">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">CoThink Score</h3>
+                    <p class="text-gray-600">
+                        Measure and improve your cognitive collaboration skills with our proprietary scoring system.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">Our Manifesto</h2>
+                    <div class="manifesto-card rounded-xl p-8 mb-6">
+                        <p class="text-xl font-medium text-gray-800 mb-4">
+                            "The real risk isn't that AI will take your job—it's that it will flatten your thinking."
+                        </p>
+                        <p class="text-gray-600">
+                            As AI tools become more powerful, people drift into shallow prompting, blind trust, and over-reliance. This leads to a race to the middle—where everyone sounds the same, creates the same, and stops evolving.
+                        </p>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        CoThink is anti-stagnation infrastructure. It's not an app. It's a movement to preserve and elevate intellectual curiosity, critical co-thinking with AI, and resilience against automation-driven mediocrity.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-blue-500 rounded-lg p-3">
+                            <i class="fas fa-lightbulb text-white text-xl"></i>
+                        </div>
+                        <p class="ml-4 text-lg font-medium text-gray-900">
+                            We don't believe in AI doing your thinking for you. We believe in AI making your thinking better.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-gray-900 rounded-2xl overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-6">
+                                <div class="text-green-400 font-mono text-sm mb-4">
+                                    <span class="text-purple-400">const</span> manifesto = {<br>
+                                    &nbsp;&nbsp;danger: <span class="text-yellow-300">"Not AI replacing humans"</span>,<br>
+                                    &nbsp;&nbsp;threat: <span class="text-yellow-300">"Humans thinking like AI"</span>,<br>
+                                    &nbsp;&nbsp;solution: <span class="text-yellow-300">"CoThink"</span>,<br>
+                                    &nbsp;&nbsp;purpose: <span class="text-yellow-300">"Preserve human ingenuity"</span>,<br>
+                                    &nbsp;&nbsp;method: <span class="text-yellow-300">"Structured cognitive collaboration"</span><br>
+                                    };
+                                </div>
+                                <div class="text-gray-400 text-sm">
+                                    <span class="text-blue-400">// The danger isn't AI replacing us—it's AI making us all think the same</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Origin Story -->
+    <section id="story" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Origin Story</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Right Brain Systems was born from a growing concern that people were learning to use AI—but not to evolve with it.
+                </p>
+            </div>
+            
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-8">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-lg p-3">
+                                    <i class="fas fa-question text-indigo-500 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-lg font-medium text-gray-900">
+                                        What if we built a platform that didn't just teach AI literacy—but created better thinkers?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-8 py-6">
+                            <p class="text-gray-600 mb-4">
+                                Founders with decades in enterprise AI noticed a dangerous trend: As LLMs got smarter, people got lazier. Not from lack of potential—but from lack of structure, feedback, and challenge.
+                            </p>
+                            <p class="text-gray-600">
+                                That's how <span class="font-medium text-indigo-600">CoThink</span> was born—a platform to practice cognitive collaboration, build metacognitive habits, stay grounded in truth, and measure improvement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative">
+                        <div class="relative z-10 bg-white rounded-xl shadow-md p-8">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Our Philosophy</h3>
+                            <p class="text-2xl font-medium text-gray-800 mb-6">
+                                "Make machines better machines, so humans can be better humans."
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-5 h-5 bg-blue-500 rounded-full"></div>
+                                    </div>
+                                    <p class="ml-3 text-gray-600">
+                                        Cognitive growth over convenience
+                                    </p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-5 h-5 bg-indigo-500 rounded-full"></div>
+                                    </div>
+                                    <p class="ml-3 text-gray-600">
+                                        Continuous learning in a changing world
+                                    </p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-5 h-5 bg-purple-500 rounded-full"></div>
+                                    </div>
+                                    <p class="ml-3 text-gray-600">
+                                        Human-centered, AI-enhanced outcomes
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Principles that guide everything we do at Right Brain Systems
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8">
+                    <div class="w-14 h-14 bg-white rounded-lg flex items-center justify-center text-blue-500 shadow-sm mb-6">
+                        <i class="fas fa-seedling text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cognitive Growth</h3>
+                    <p class="text-gray-600">
+                        We prioritize long-term intellectual development over short-term convenience. Our tools are designed to challenge and expand your thinking.
+                    </p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8">
+                    <div class="w-14 h-14 bg-white rounded-lg flex items-center justify-center text-purple-500 shadow-sm mb-6">
+                        <i class="fas fa-infinity text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lifelong Learning</h3>
+                    <p class="text-gray-600">
+                        In a rapidly changing world, we build systems that help you adapt, learn, and grow continuously—not just use today's technology.
+                    </p>
+                </div>
+                
+                <!-- Value 3 -->
+                <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-8">
+                    <div class="w-14 h-14 bg-white rounded-lg flex items-center justify-center text-indigo-500 shadow-sm mb-6">
+                        <i class="fas fa-hands-helping text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Human-Centered</h3>
+                    <p class="text-gray-600">
+                        Technology should enhance human potential, not replace it. We design for human judgment, creativity, and reflection.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-500 to-indigo-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Elevate Your Thinking?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Join the movement to defend human ingenuity in the age of AI. Be among the first to experience CoThink.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition duration-300">
+                    Join Waitlist
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-white hover:bg-opacity-10 transition duration-300">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Right Brain Systems</h3>
+                    <p class="text-gray-400">
+                        Where Artificial Intelligence meets Human Imagination.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Product</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Research</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 mb-4 md:mb-0">
+                    © 2023 Right Brain Systems. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Typewriter effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const phrases = [
+                "Defend human ingenuity.",
+                "Elevate your thinking.",
+                "Think differently with AI.",
+                "Beyond automation.",
+                "Cognitive collaboration."
+            ];
+            let currentPhrase = 0;
+            const element = document.createElement('div');
+            element.className = 'typewriter text-xl md:text-2xl font-medium text-gray-700 mb-8';
+            document.querySelector('#manifesto').parentNode.insertBefore(element, document.querySelector('#manifesto'));
+            
+            function typeWriter(text, i, fnCallback) {
+                if (i < text.length) {
+                    element.innerHTML = text.substring(0, i+1);
+                    setTimeout(function() { typeWriter(text, i + 1, fnCallback) }, 100);
+                } else if (typeof fnCallback == 'function') {
+                    setTimeout(fnCallback, 2000);
+                }
+            }
+            
+            function startTextAnimation(i) {
+                if (i < phrases[i].length) {
+                    typeWriter(phrases[currentPhrase], 0, function() {
+                        currentPhrase = (currentPhrase + 1) % phrases.length;
+                        setTimeout(function() { startTextAnimation(currentPhrase) }, 2000);
+                    });
+                }
+            }
+            
+            startTextAnimation(0);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+{
+  "servers": [
+    {
+      "id": "github-mcp",
+      "name": "GitHub MCP Server",
+      "version": "1.2.0",
+      "description": "Provides GitHub API access with repository management, issue tracking, and PR operations through MCP protocol.",
+      "status": "active",
+      "permissions": ["create", "read", "update", "delete"],
+      "capabilities": ["repository-management", "issue-tracking", "pull-requests", "code-search", "webhooks"],
+      "contact": {
+        "name": "Alice Johnson",
+        "email": "alice.johnson@company.com",
+        "team": "Platform Engineering"
+      },
+      "documentation": "https://docs.company.com/mcp/github",
+      "lastUpdated": "2025-01-15"
+    },
+    {
+      "id": "database-mcp",
+      "name": "Database Query Server",
+      "version": "2.0.1",
+      "description": "Universal database access layer supporting PostgreSQL, MySQL, and MongoDB with query builder and migration tools.",
+      "status": "active",
+      "permissions": ["create", "read", "update", "delete"],
+      "capabilities": ["postgresql", "mysql", "mongodb", "query-builder", "migrations", "connection-pooling"],
+      "contact": {
+        "name": "Bob Smith",
+        "email": "bob.smith@company.com",
+        "team": "Data Infrastructure"
+      },
+      "documentation": "https://docs.company.com/mcp/database",
+      "lastUpdated": "2025-01-20"
+    },
+    {
+      "id": "slack-mcp",
+      "name": "Slack Integration Server",
+      "version": "0.9.0",
+      "description": "Enables Slack workspace interactions including message posting, channel management, and user lookups.",
+      "status": "beta",
+      "permissions": ["create", "read", "update"],
+      "capabilities": ["messaging", "channel-management", "user-directory", "file-sharing", "notifications"],
+      "contact": {
+        "name": "Carol Davis",
+        "email": "carol.davis@company.com",
+        "team": "Collaboration Tools"
+      },
+      "documentation": "https://docs.company.com/mcp/slack",
+      "lastUpdated": "2025-01-18"
+    },
+    {
+      "id": "aws-mcp",
+      "name": "AWS Services MCP",
+      "version": "3.1.0",
+      "description": "Comprehensive AWS service integration including S3, EC2, Lambda, and CloudFormation management.",
+      "status": "active",
+      "permissions": ["create", "read", "update", "delete"],
+      "capabilities": ["s3-storage", "ec2-management", "lambda-functions", "cloudformation", "iam-policies", "cloudwatch"],
+      "contact": {
+        "name": "David Wilson",
+        "email": "david.wilson@company.com",
+        "team": "Cloud Operations"
+      },
+      "documentation": "https://docs.company.com/mcp/aws",
+      "lastUpdated": "2025-01-22"
+    },
+    {
+      "id": "jira-mcp",
+      "name": "Jira Project Server",
+      "version": "1.5.0",
+      "description": "Jira integration for project management, issue creation, sprint planning, and reporting.",
+      "status": "active",
+      "permissions": ["create", "read", "update"],
+      "capabilities": ["issue-management", "sprint-planning", "reporting", "custom-fields", "workflows"],
+      "contact": {
+        "name": "Eve Martinez",
+        "email": "eve.martinez@company.com",
+        "team": "Product Operations"
+      },
+      "documentation": "https://docs.company.com/mcp/jira",
+      "lastUpdated": "2025-01-19"
+    },
+    {
+      "id": "email-mcp",
+      "name": "Email Service MCP",
+      "version": "0.5.0",
+      "description": "Legacy email service integration - being replaced by newer communication APIs.",
+      "status": "deprecated",
+      "permissions": ["read"],
+      "capabilities": ["smtp", "imap", "email-templates"],
+      "contact": {
+        "name": "Frank Brown",
+        "email": "frank.brown@company.com",
+        "team": "Legacy Systems"
+      },
+      "documentation": "https://docs.company.com/mcp/email",
+      "lastUpdated": "2024-12-01"
+    },
+    {
+      "id": "kubernetes-mcp",
+      "name": "Kubernetes Control Server",
+      "version": "1.8.0",
+      "description": "Kubernetes cluster management with deployment automation, scaling, and monitoring capabilities.",
+      "status": "active",
+      "permissions": ["create", "read", "update", "delete"],
+      "capabilities": ["deployment-management", "pod-operations", "service-mesh", "auto-scaling", "monitoring", "helm-charts"],
+      "contact": {
+        "name": "Grace Chen",
+        "email": "grace.chen@company.com",
+        "team": "DevOps"
+      },
+      "documentation": "https://docs.company.com/mcp/kubernetes",
+      "lastUpdated": "2025-01-21"
+    },
+    {
+      "id": "analytics-mcp",
+      "name": "Analytics Data Server",
+      "version": "0.7.0",
+      "description": "Real-time analytics and data processing with support for custom metrics and dashboards.",
+      "status": "beta",
+      "permissions": ["read"],
+      "capabilities": ["real-time-analytics", "custom-metrics", "data-aggregation", "dashboard-api", "export-reports"],
+      "contact": {
+        "name": "Henry Lee",
+        "email": "henry.lee@company.com",
+        "team": "Data Analytics"
+      },
+      "documentation": "https://docs.company.com/mcp/analytics",
+      "lastUpdated": "2025-01-17"
+    }
+  ]
+}

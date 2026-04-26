@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAIR MCP Server Catalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #64748b;
+            --primary-light: #94a3b8;
+            --primary-dark: #475569;
+            --secondary: #06b6d4;
+            --secondary-light: #67e8f9;
+            --secondary-dark: #0891b2;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg-primary: #fafafa;
+            --bg-secondary: #f5f5f5;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-tertiary: #94a3b8;
+            --border: #e5e7eb;
+            --border-light: #f3f4f6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        body {
+            font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .header-logo {
+            flex-shrink: 0;
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            animation: fadeIn 0.6s ease-out 0.1s both;
+        }
+
+        .search-container {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-tertiary);
+            width: 20px;
+            height: 20px;
+        }
+
+        input[type="search"] {
+            width: 100%;
+            padding: 1rem 1.25rem 1rem 3.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 400;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        input[type="search"]:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        input[type="search"]::placeholder {
+            color: var(--text-tertiary);
+            font-weight: 300;
+        }
+
+        .filter-container {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        select {
+            padding: 1rem 3rem 1rem 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 400;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        select:hover {
+            border-color: var(--secondary);
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.6s ease-out 0.2s both;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+
+        .server-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .server-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+            animation: fadeIn 0.6s ease-out both;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .server-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--secondary);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .server-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            border-color: var(--secondary-light);
+        }
+
+        .server-card:hover::after {
+            opacity: 1;
+        }
+
+        .server-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .server-header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .server-header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+
+        .server-badges {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .server-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .server-version {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.375rem 0.875rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .status-active {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--success);
+        }
+
+        .status-active .status-indicator {
+            background: var(--success);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .status-beta {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--warning);
+        }
+
+        .status-beta .status-indicator {
+            background: var(--warning);
+        }
+
+        .status-deprecated {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: var(--danger);
+        }
+
+        .status-deprecated .status-indicator {
+            background: var(--danger);
+        }
+
+        /* Permissions Badge */
+        .permissions-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.375rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .permissions-badge.full-crud {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+            color: var(--success);
+        }
+
+        .permissions-badge.read-only {
+            background: rgba(100, 116, 139, 0.1);
+            border-color: rgba(100, 116, 139, 0.3);
+            color: var(--text-secondary);
+        }
+
+        .permissions-badge.partial {
+            background: rgba(6, 182, 212, 0.1);
+            border-color: rgba(6, 182, 212, 0.3);
+            color: var(--secondary);
+        }
+
+        .permission-icons {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .permission-icon {
+            width: 14px;
+            height: 14px;
+            opacity: 0.3;
+            transition: opacity 0.2s ease;
+        }
+
+        .permission-icon.active {
+            opacity: 1;
+        }
+
+        .permission-tooltip {
+            position: relative;
+            display: inline-flex;
+            cursor: help;
+        }
+
+        .permission-tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.5rem 0.75rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.25rem;
+            z-index: 10;
+        }
+
+        .server-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .server-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 400;
+        }
+
+        .meta-item svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            color: var(--secondary);
+        }
+
+        .capabilities {
+            margin-bottom: 1.5rem;
+        }
+
+        .capabilities-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .capability-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .capability-tag {
+            padding: 0.375rem 0.875rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .capability-tag:hover {
+            background: rgba(6, 182, 212, 0.1);
+            border-color: rgba(6, 182, 212, 0.3);
+            color: var(--secondary-dark);
+        }
+
+        .contact-section {
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .contact-name {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .contact-email {
+            color: var(--secondary-dark);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .contact-email:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
+        .docs-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .docs-link:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(6, 182, 212, 0.2);
+        }
+
+        .docs-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 6rem 2rem;
+            color: var(--text-secondary);
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .no-results h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .no-results p {
+            font-size: 1.125rem;
+            font-weight: 300;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-left: 1rem;
+            border: 2px solid var(--border);
+            border-top-color: var(--secondary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            margin-top: 6rem;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-section:first-child {
+            grid-column: span 1;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .footer-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            font-size: 0.875rem;
+        }
+
+        .footer-subtitle {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8125rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary);
+        }
+
+        .footer-link svg {
+            flex-shrink: 0;
+            width: 14px;
+            height: 14px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer-social a svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: var(--text-tertiary);
+            font-size: 0.8125rem;
+            font-weight: 300;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-bottom-link {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: 0.8125rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .footer-bottom-link:hover {
+            color: var(--secondary);
+        }
+
+        .footer-separator {
+            color: var(--text-tertiary);
+            font-size: 0.8125rem;
+        }
+
+        /* Responsive footer */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        /* Pattern background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(100, 116, 139, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(6, 182, 212, 0.02) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .header-logo img {
+                width: 100px;
+                height: 33px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .server-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-container {
+                min-width: 100%;
+            }
+
+            .contact-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-section:first-child {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-logo">
+                    <!-- <img src="https://fair.rackspace.com/wp-content/uploads/2025/04/FAIR-Logo.svg" alt="FAIR Logo"
+                        width="120" height="40"> -->
+                </div>
+                <div class="header-text">
+                    <h1>FAIR MCP Server Catalog</h1>
+                    <p class="subtitle">Discover and explore available Model Context Protocol servers</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="stats" id="stats">
+            <div class="stat-card">
+                <span class="stat-number" id="totalServers">0</span>
+                <span class="stat-label">Total Servers</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="activeServers">0</span>
+                <span class="stat-label">Active Servers</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="totalCapabilities">0</span>
+                <span class="stat-label">Capabilities</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="totalContacts">0</span>
+                <span class="stat-label">Maintainers</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="search-container">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd" />
+                </svg>
+                <input type="search" id="searchInput" placeholder="Search servers, capabilities, or contacts...">
+            </div>
+            <div class="filter-container">
+                <select id="statusFilter">
+                    <option value="">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="beta">Beta</option>
+                    <option value="deprecated">Deprecated</option>
+                </select>
+                <select id="capabilityFilter">
+                    <option value="">All Capabilities</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="server-grid" id="serverGrid">
+            <!-- Server cards will be dynamically inserted here -->
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <h3>No servers found</h3>
+            <p>Try adjusting your search criteria or filters</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Your Company</h3>
+                    <p class="footer-description">
+                        Building powerful Model Context Protocol servers to enhance AI capabilities across Rackspace.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://github.com/rax-incubate" target="_blank" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <!-- <a href="https://twitter.com/yourcompany" target="_blank" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/company/yourcompany" target="_blank" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/>
+                            </svg>
+                        </a> -->
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact</h4>
+                    <ul class="footer-list">
+                        <li>
+                            <a href="mailto:ice_support@rackspace.com" class="footer-link">
+                                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                </svg>
+                                ice_support@rackspace.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://company.slack.com/channels/mcp-support" class="footer-link">
+                                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                #mcp-support
+                            </a>
+                        </li>
+                        <li>
+                            <span class="footer-link">
+                                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                Columbus, OH
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Resources</h4>
+                    <ul class="footer-list">
+                        <li><a href="https://github.com/yourcompany/mcp-catalog" class="footer-link">Catalog
+                                Repository</a></li>
+                        <li><a href="https://github.com/yourcompany/mcp-sdk" class="footer-link">MCP SDK</a></li>
+                        <li><a href="https://docs.company.com/mcp" class="footer-link">Documentation</a></li>
+                        <li><a href="https://github.com/yourcompany/mcp-examples" class="footer-link">Examples</a></li>
+                        <li><a href="https://company.com/blog/mcp" class="footer-link">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contribute</h4>
+                    <ul class="footer-list">
+                        <li><a href="https://github.com/yourcompany/mcp-catalog/blob/main/CONTRIBUTING.md"
+                                class="footer-link">Contributing Guide</a></li>
+                        <li><a href="https://github.com/yourcompany/mcp-catalog/issues" class="footer-link">Report
+                                Issues</a></li>
+                        <li><a href="https://github.com/yourcompany/mcp-template" class="footer-link">Server
+                                Template</a></li>
+                        <li><a href="https://company.com/careers" class="footer-link">Join Our Team</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; FAIR, 2025 Rackspace. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="https://company.com/privacy" class="footer-bottom-link">Privacy Policy</a>
+                    <span class="footer-separator">•</span>
+                    <a href="https://company.com/terms" class="footer-bottom-link">Terms of Service</a>
+                    <span class="footer-separator">•</span>
+                    <a href="https://status.company.com" class="footer-bottom-link">System Status</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let servers = [];
+        let filteredServers = [];
+
+        // Initialize the application
+        async function init() {
+            try {
+                // Show loading state
+                const grid = document.getElementById('serverGrid');
+                grid.innerHTML = '<div class="loading">Loading MCP servers</div>';
+
+                // Fetch the external JSON file
+                const response = await fetch('mcp-catalog.json');
+
+                if (!response.ok) {
+                    throw new Error(`Failed to load catalog: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                // Validate data structure
+                if (!data.servers || !Array.isArray(data.servers)) {
+                    throw new Error('Invalid JSON structure: expected "servers" array');
+                }
+
+                servers = data.servers;
+                filteredServers = [...servers];
+
+                updateStats();
+                populateCapabilityFilter();
+                renderServers();
+
+                // Set up event listeners
+                document.getElementById('searchInput').addEventListener('input', filterServers);
+                document.getElementById('statusFilter').addEventListener('change', filterServers);
+                document.getElementById('capabilityFilter').addEventListener('change', filterServers);
+
+            } catch (error) {
+                console.error('Error loading MCP catalog:', error);
+
+                // Show error message
+                const grid = document.getElementById('serverGrid');
+                grid.innerHTML = `
+                    <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                        <h3 style="color: var(--danger); margin-bottom: 1rem; font-weight: 700;">Error Loading Catalog</h3>
+                        <p style="font-weight: 300;">${error.message}</p>
+                        <p style="margin-top: 1rem; font-size: 0.875rem; font-weight: 300;">
+                            Make sure the mcp-catalog.json file is in the same directory as this HTML file.
+                        </p>
+                    </div>
+                `;
+
+                // Update stats to show zeros
+                document.getElementById('totalServers').textContent = '0';
+                document.getElementById('activeServers').textContent = '0';
+                document.getElementById('totalCapabilities').textContent = '0';
+                document.getElementById('totalContacts').textContent = '0';
+            }
+        }
+
+        // Update statistics
+        function updateStats() {
+            document.getElementById('totalServers').textContent = servers.length;
+            document.getElementById('activeServers').textContent = servers.filter(s => s.status === 'active').length;
+
+            const allCapabilities = new Set();
+            servers.forEach(server => {
+                server.capabilities.forEach(cap => allCapabilities.add(cap));
+            });
+            document.getElementById('totalCapabilities').textContent = allCapabilities.size;
+
+            const uniqueContacts = new Set(servers.map(s => s.contact.email));
+            document.getElementById('totalContacts').textContent = uniqueContacts.size;
+        }
+
+        // Populate capability filter
+        function populateCapabilityFilter() {
+            const capabilitySet = new Set();
+            servers.forEach(server => {
+                server.capabilities.forEach(cap => capabilitySet.add(cap));
+            });
+
+            const select = document.getElementById('capabilityFilter');
+            Array.from(capabilitySet).sort().forEach(cap => {
+                const option = document.createElement('option');
+                option.value = cap;
+                option.textContent = cap.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                select.appendChild(option);
+            });
+        }
+
+        // Filter servers based on search and filters
+        function filterServers() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const statusFilter = document.getElementById('statusFilter').value;
+            const capabilityFilter = document.getElementById('capabilityFilter').value;
+
+            filteredServers = servers.filter(server => {
+                // Search filter
+                const matchesSearch = !searchTerm ||
+                    server.name.toLowerCase().includes(searchTerm) ||
+                    server.description.toLowerCase().includes(searchTerm) ||
+                    server.capabilities.some(cap => cap.includes(searchTerm)) ||
+                    server.contact.name.toLowerCase().includes(searchTerm) ||
+                    server.contact.team.toLowerCase().includes(searchTerm);
+
+                // Status filter
+                const matchesStatus = !statusFilter || server.status === statusFilter;
+
+                // Capability filter
+                const matchesCapability = !capabilityFilter || server.capabilities.includes(capabilityFilter);
+
+                return matchesSearch && matchesStatus && matchesCapability;
+            });
+
+            renderServers();
+        }
+
+        // Render server cards
+        function renderServers() {
+            const grid = document.getElementById('serverGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (filteredServers.length === 0) {
+                grid.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+
+            grid.innerHTML = filteredServers.map((server, index) => {
+                // Determine permissions type
+                const permissions = server.permissions || [];
+                const hasCreate = permissions.includes('create');
+                const hasRead = permissions.includes('read');
+                const hasUpdate = permissions.includes('update');
+                const hasDelete = permissions.includes('delete');
+
+                let permissionClass = 'read-only';
+                let permissionLabel = 'Read Only';
+
+                if (hasCreate && hasRead && hasUpdate && hasDelete) {
+                    permissionClass = 'full-crud';
+                    permissionLabel = 'Full Access';
+                } else if (permissions.length > 1) {
+                    permissionClass = 'partial';
+                    permissionLabel = 'Limited Access';
+                }
+
+                return `
+                <div class="server-card" style="animation-delay: ${index * 0.05}s">
+                    <div class="server-header">
+                        <div class="server-header-left">
+                            <h3 class="server-name">${server.name}</h3>
+                            <div class="server-badges">
+                                <span class="server-version">v${server.version}</span>
+                                <div class="permissions-badge ${permissionClass} permission-tooltip" data-tooltip="C: Create, R: Read, U: Update, D: Delete">
+                                    <div class="permission-icons">
+                                        <svg class="permission-icon ${hasCreate ? 'active' : ''}" viewBox="0 0 14 14" fill="currentColor">
+                                            <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                        <svg class="permission-icon ${hasRead ? 'active' : ''}" viewBox="0 0 14 14" fill="currentColor">
+                                            <path d="M1 7c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6-6-2.686-6-6z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                            <circle cx="7" cy="7" r="2" fill="currentColor"/>
+                                        </svg>
+                                        <svg class="permission-icon ${hasUpdate ? 'active' : ''}" viewBox="0 0 14 14" fill="currentColor">
+                                            <path d="M8.5 2.5l3 3L4 13H1v-3l7.5-7.5z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                        </svg>
+                                        <svg class="permission-icon ${hasDelete ? 'active' : ''}" viewBox="0 0 14 14" fill="currentColor">
+                                            <path d="M2 7h10M7 2v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" transform="rotate(45 7 7)"/>
+                                        </svg>
+                                    </div>
+                                    <span>${permissionLabel}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="server-header-right">
+                            <span class="status-badge status-${server.status}">
+                                <span class="status-indicator"></span>
+                                ${server.status}
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <p class="server-description">${server.description}</p>
+                    
+                    <div class="server-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                            </svg>
+                            ${server.contact.team}
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                            </svg>
+                            Updated ${formatDate(server.lastUpdated)}
+                        </div>
+                    </div>
+                    
+                    <div class="capabilities">
+                        <h4 class="capabilities-title">Capabilities</h4>
+                        <div class="capability-tags">
+                            ${server.capabilities.map(cap =>
+                    `<span class="capability-tag">${cap}</span>`
+                ).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="contact-section">
+                        <div class="contact-details">
+                            <span class="contact-name">${server.contact.name}</span>
+                            <a href="mailto:${server.contact.email}" class="contact-email">${server.contact.email}</a>
+                        </div>
+                        <a href="${server.documentation}" target="_blank" class="docs-link">
+                            Documentation
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        // Format date helper
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diffTime = Math.abs(now - date);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            if (diffDays < 7) {
+                return `${diffDays} days ago`;
+            } else if (diffDays < 30) {
+                const weeks = Math.floor(diffDays / 7);
+                return `${weeks} week${weeks > 1 ? 's' : ''} ago`;
+            } else {
+                return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+
+</html>
